@@ -8,21 +8,18 @@
 </head>
 <body>
     <?php
-        var_dump($_GET);
-        var_dump($_POST);
         $txt = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam iure possimus quod ut perspiciatis. At eligendi repellendus eveniet, aperiam alias, doloribus corporis, nihil sunt similique quidem magnam doloremque ipsa voluptatibus!";
-        $txtlen = strlen($txt);
         $censura = $_GET["censura"];
-        $censuratxt = str_replace($_GET["censura"], '***', $txt);
+        $censuratxt = str_replace($censura, '***', $txt);
     ?> 
     <h1><?php echo $txt ?></h1>
     <div>
-        Lunghezza testo: <?php echo $txtlen ?> 
+        Lunghezza testo: <?php echo strlen($txt) ?> 
     </div>
     <h3>Testo con censura:</h3>
     <p>
         <?php echo $censuratxt ?>
-        Lunghezza testo: <?php echo $txtlen ?> 
+        Lunghezza testo: <?php echo strlen($censuratxt) ?> 
     </p>
 </body>
 </html>
